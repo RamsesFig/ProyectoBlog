@@ -1,0 +1,33 @@
+body{
+	background: url(../img/f.jpg) no-repeat center center fixed;
+    background-size: cover;
+   /* display: flex;
+    min-height: 100vh;
+
+    */
+}
+.tit
+{
+    color:white;
+    background: url(../img/cafe.jpg) no-repeat;
+    background-size: cover;
+    font-family: "Homer Simpson UI";
+	padding: 20px 0; 
+	height: 15%;
+	width: 100%;
+}
+form
+{
+  margin: auto;
+  width: 20%;
+  max-width: 500px;
+  background:#C0C0C0;
+  padding: 40px;
+  border: 1px solid rgba(0,0,0,0.2);
+
+}
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgba(0,0,0,0.5);
+}

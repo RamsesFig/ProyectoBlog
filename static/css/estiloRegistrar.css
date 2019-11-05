@@ -1,0 +1,38 @@
+body{
+background: url("../img/fondoRegistrar.jpg") no-repeat center center fixed;
+background-size: 88%;
+}
+#enc{
+    font-size: xx-large;
+}
+.lab{
+    color:darkblue;
+    font-family: cursive;
+    
+}
+.la{
+    color:darkblue;
+    font-family: cursive;
+    
+}
+#btn{
+    color:#fff;
+    background-color:#343a40;
+    border-color:#343a40;
+    width:150px;
+    height:40px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;;
+}
+#btn:hover{
+    background-color: lightgray;
+    }
+
+#titulo{
+    color: lightgray;
+    font-size: 50px;
+    background-color: black;
+    font-family: serif;
+    width: 88%;
+    background: rgb(0, 0, 0, 0.5);
+}

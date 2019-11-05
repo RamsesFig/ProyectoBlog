@@ -1,0 +1,25 @@
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/estiloLogin.css' %}">
+
+</head>
+
+<body>
+    <div class="tit">
+        <center><h1>BLOG</h1> </center>
+    </div>
+    <br>
+    <br>
+
+<FORM METHOD="POST">
+    <center>
+    <h2>Iniciar sesión</h2>
+    {% csrf_token %}
+    {{ IngresarForm.as_p }}
+        <br>
+    <INPUT TYPE="SUBMIT">
+    </center>
+</FORM>
+</body>

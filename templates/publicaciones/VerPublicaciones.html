@@ -1,0 +1,47 @@
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/estiloPublicacion.css' %}">
+
+    <p id="titulo" text align="center">Página principal</p><br>
+</head>
+<body>
+    {% if request.user.is_authenticated %}
+    <div id="salir"><a href="{% url 'Salir' %}"><input type="button" value="Salir"></a></div>
+    <center>
+        <div class="bienvenido">
+            <p >Bienvenido, <span id="usuario">{{ request.user.username }}</span></p>
+        </div>
+    </center>
+    {% else %}
+    <center>
+        <div class="bienvenido"><p text align="center">Aún no has iniciado sesión. <span class="llamas"> <br>Inicia sesión </span> o <span class="llamas">registrate</span>.</div> <br><br>
+    <a href="{% url 'Ingresar' %}"><input type="button" value="Ingresar"></a>
+    <a href="{% url 'Registro' %}"><input type="button" value="Registro"></a>
+    </center>
+
+    {% endif %}
+<center>
+    <div id="publicaciones">
+        {% for publicacion in publicaciones %}
+        <h1 class="titulo" style="font-size:160%;">{{ publicacion.titulo }}</h1>
+        <br>
+        <p>{{ publicacion.texto }}</p>
+        <br>
+        <p>-{{ publicacion.user }}</p>       {{ publicacion.date }}
+        <br>
+        <div id="botonleer">
+        <A HREF="{% url 'LeerPublicacion' publicacion_pk=publicacion.pk %}"><INPUT TYPE="BUTTON" VALUE="Leer publicación"></A>
+       
+        </div>
+        <br>
+        <hr>
+        {% endfor %}
+    </div>
+</center>
+
+
+</body>
+</html>

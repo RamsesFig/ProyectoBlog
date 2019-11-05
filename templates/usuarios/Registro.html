@@ -1,0 +1,16 @@
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/estiloRegistrar.css' %}">
+</head>
+
+<FORM METHOD="POST">
+    <center>
+        <p id="titulo"> Registrar usuario</p>
+        <br>
+    {% csrf_token %}
+    {{ RegistroForm.as_p }}
+    <INPUT TYPE="SUBMIT">
+        </center>
+</FORM>

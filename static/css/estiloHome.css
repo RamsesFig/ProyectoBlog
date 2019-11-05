@@ -1,0 +1,52 @@
+body{
+    background: url("../img/notas.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+#titulo {
+    color: #6A392F;
+    font-size: 50px;
+    background-color: black;
+    font-family: serif;
+}
+form
+{
+  margin: auto;
+  width: 40%;
+  max-width: 800px;
+  background:rgba(0,0,0,0.7);
+  padding: 40px;
+  border: 1px solid rgba(0,0,0,0.2);
+
+}
+.bienvenido{
+    color: white;
+    font-size: 40px;
+    font-family: serif;
+    background-color: black;
+    width: 40%;
+    background: rgb(0, 0, 0, 0.7);
+}
+
+#publicaciones{
+    color: white;
+    font-size: 40px;
+    font-family: serif;
+    background-color: black;
+    width: 40%;
+    background: rgb(0, 0, 0, 0.7);
+}
+
+#usuario{
+    color: #D8492C;
+}
+
+#salir{
+    padding-right: 100px;
+    text-align: right;
+}
+
+.llamas{
+    color:#E4DE15;
+}
+

@@ -1,0 +1,17 @@
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/estiloPublicar.css' %}">
+</head>
+
+<FORM METHOD="POST">
+    <center>
+        <p id="titulo"> Publicar un artículo</p>
+        <br>
+    {% csrf_token %}
+    {{ form.as_p }}
+        <br>
+    <INPUT TYPE="SUBMIT">
+    </center>
+</FORM>

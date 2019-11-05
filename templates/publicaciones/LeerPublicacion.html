@@ -1,0 +1,82 @@
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/estiloLeerPublicacion.css' %}">
+    <p id="titulo" text align="center">Ver publicación</p><br>
+</head>
+<body>
+
+    <div id="salir">
+        <a href="{% url 'Salir' %}">
+            <input type="button" value="Salir">
+        </a>
+    </div>
+
+    <div id="regresar">
+        <a href="{% url 'VerPublicaciones' %}">
+            <input type="button" value="Regresar">
+        </a>
+    </div>
+
+    <center>
+        <div class="bienvenido">
+            <p >
+                <span id="usuario">
+                    {{ publicacion.titulo }}
+                </span>
+            </p>
+        </div>
+
+        <div id="publicaciones">
+            {{ publicacion.texto }}
+            <br><br>
+            <p>-{{ publicacion.user }}
+            </p>
+            {{ publicacion.date }}
+            <br>
+            {% if request.user == publicacion.user %}
+            <a class="btn btn-default" href="{% url 'Modificar' publicacion_pk=publicacion.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            {% endif %}
+            <br>
+        </div>
+   
+        </div>
+    </center>
+
+    <center>
+        <br>
+        <div id="comentarios">
+            {% if request.user.is_authenticated %}
+             <span div class="letra">   <br><br>
+                 <center>
+                     <div id="h2">
+                         Introduce un comentario aqui ....
+                     </div>
+                 </center>
+                 <br>
+
+                 <form method="post">{% csrf_token %} {{ formulario }}
+                     <br>
+                     <br>
+                     <input type="submit" value="Aceptar">
+                 </form>
+             </span>
+            {% endif %}
+            <span id="comentarios2">
+                {% for comentario in comentarios %}
+                {% if comentario.publicacion == publicacion %}
+                    {{ comentario.texto }}<br>
+                    -{{ comentario.user }},
+                    Fecha: {{comentario.date}}
+
+                <br><br>
+            </span>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </center>
+</body>
+</html>
